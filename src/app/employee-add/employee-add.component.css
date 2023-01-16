@@ -54,7 +54,18 @@
     display: flex;
 }
 
+.form-group .date-input input{
+    width: 40%;
+}
+
 .form-group select{
     font-size: 14px;
     width: 80%;
+}
+
+.alert-failed{
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
 }

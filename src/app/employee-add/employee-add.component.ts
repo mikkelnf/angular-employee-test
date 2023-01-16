@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
 })
 export class EmployeeAddComponent {
   isEmpty: Boolean = true;
+  isValidEmail: Boolean;
   maxDate: any;
   addEmployeeForm = this.formBuilder.group({
     firstName: '',
@@ -18,6 +19,8 @@ export class EmployeeAddComponent {
     email: '',
     birthDate: '',
     basicSalary: '',
+    group: '',
+    status: '',
     description: '',
   });
 
@@ -34,21 +37,15 @@ export class EmployeeAddComponent {
     const day = (d || new Date()).getDay();
     return day != 0
   };
-  
-  // ngOnInit(){
-  //   if(
-  //     this.addEmployeeForm.value.firstName != "" ||
-  //     this.addEmployeeForm.value.lastName !== "" ||
-  //     this.addEmployeeForm.value.username !== "" ||
-  //     this.addEmployeeForm.value.email !== "" ||
-  //     this.addEmployeeForm.value.birthDate !== "" ||
-  //     this.addEmployeeForm.value.basicSalary !== "" ||
-  //     this.addEmployeeForm.value.description !== "" 
-  //   ){
-  //     this.isEmpty = false;
-  //   }
-  // }
 
   onSubmit() {
+    if(this.addEmployeeForm.value.email?.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+      this.isValidEmail = true
+    }else{
+      this.isValidEmail = false
+    }
+    if(this.isValidEmail === true){
+      this.addEmployeeForm.reset()
+    }
   }
 }

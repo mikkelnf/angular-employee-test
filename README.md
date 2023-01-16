@@ -6,6 +6,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Mock API
+
+This application fetchs api from mockapi.io
+
+https://63c16764376b9b2e647ab380.mockapi.io/employee
+
+## Data login
+
+For login validation testing, the correct data is
+<br>
+username : admin
+<br>
+Password : admin
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

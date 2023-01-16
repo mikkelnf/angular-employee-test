@@ -75,8 +75,13 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="clickedRows.add(row)"></tr>
     </table>
     <hr>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10"></mat-paginator>
+    <ul>
+        <li *ngFor="let clickedRow of clickedRows">
+          Clicked on {{clickedRow.id}}
+        </li>
+      </ul>
 </div>
