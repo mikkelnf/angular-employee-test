@@ -11,11 +11,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EmployeeComponent } from './employee/employee.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { EmployeeAddComponent } from './employee-add/employee-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    EmployeeComponent,
+    NotFoundComponent,
+    EmployeeAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTableModule,
     MatSortModule,
     MatProgressSpinnerModule,
-
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

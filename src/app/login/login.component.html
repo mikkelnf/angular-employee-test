@@ -21,7 +21,7 @@
                             placeholder="password" formControlName="password">
                     </div>
                 </div>
-                <button class="btn btn-outline-primary mt-4 mb-1 login-btn" type="submit">Login</button>
+                <button class="btn btn-outline-primary mt-4 mb-1 login-btn" [ngClass]="{'disabled': loginForm.value.username === '' || loginForm.value.password === ''}" type="submit">Login</button>
             </div>
         </div>
     </form>

@@ -1,0 +1,79 @@
+<div class="content">
+    <div class="d-flex table-control">
+        <div class="btn-group add-section" role="group">
+            <a class="btn btn-outline-success"><i class="bi bi-plus-lg" [routerLink]="['add']"></i></a>
+            <button type="button" class="btn btn-outline-secondary btn-add disabled">Add new employee</button>
+        </div>
+        <div class="input-group search-section">
+            <button class="btn btn-outline-secondary disabled" type="button">
+                <i class="bi bi-search"></i>
+            </button>
+            <input type="text" class="form-control" aria-label="" matInput (keyup)="applyFilter($event)" placeholder="Search..." #input>
+        </div>
+    </div>
+    <hr>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="birthDate">
+            <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="basicSalary">
+            <th mat-header-cell *matHeaderCellDef> Basic Salary </th>
+            <td mat-cell *matCellDef="let element"> {{element.basicSalary}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="group">
+            <th mat-header-cell *matHeaderCellDef> Group </th>
+            <td mat-cell *matCellDef="let element"> {{element.group}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-warning">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-outline-danger">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10"></mat-paginator>
+</div>

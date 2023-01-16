@@ -24,7 +24,7 @@ export class LoginComponent{
   onSubmit(){
     if(this.loginForm.value.username==="admin" && this.loginForm.value.password==="admin"){
       this.isLogin = true
-      this.route.navigate(["home"])
+      this.route.navigate(["employee"])
     }else{
       this.isLogin = false
     }
