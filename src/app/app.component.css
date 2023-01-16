@@ -1,0 +1,12 @@
+.navbar{
+    padding: 10px 30px !important;
+}
+
+.btn-logout{
+    font-size: 14px;
+}
+
+.btn-logout i {
+    font-size: 16px;
+    margin-right: 5px;
+}
