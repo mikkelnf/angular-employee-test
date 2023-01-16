@@ -14,7 +14,7 @@ export class EmployeeService {
     return this.http.get('https://63c16764376b9b2e647ab380.mockapi.io/employee')
   }
 
-  getById(id: number){
+  getById(id: string){
     return this.http.get(`https://63c16764376b9b2e647ab380.mockapi.io/employee/${id}`)
   }
 }

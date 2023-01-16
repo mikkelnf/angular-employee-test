@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { EmployeeService } from '../service/employee.service';
 import { Employee } from 'src/models/employee';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class EmployeeComponent {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(
-    private myDataService:EmployeeService
+    private myDataService:EmployeeService,
+    private route:Router
   ){
   }
 
@@ -40,6 +42,10 @@ export class EmployeeComponent {
       this.dataSource.sort = this.sort;
     }
     ))
+  }
+
+  clicked(row: any){
+    this.route.navigate(["employee/" + row.id])
   }
 
   applyFilter(event: Event) {

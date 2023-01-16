@@ -17,6 +17,7 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
+import { EmployeeGetByIdComponent } from './employee-get-by-id/employee-get-by-id.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DatePipe } from '@angular/common';
     EmployeeComponent,
     NotFoundComponent,
     EmployeeAddComponent,
+    EmployeeGetByIdComponent,
   ],
   imports: [
     BrowserModule,
