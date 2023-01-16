@@ -32,7 +32,6 @@ export class EmployeeComponent {
   ngOnInit(): void{
     this.subs.add(this.myDataService.getData()
     .subscribe((res) => {
-      console.log(res);
       this.myData = res;
       this.dataSource = new MatTableDataSource<Employee>(this.myData);
       this.dataSource.paginator = this.paginator;

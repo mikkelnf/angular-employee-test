@@ -12,9 +12,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EmployeeComponent } from './employee/employee.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,12 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
     MatTableModule,
     MatSortModule,
     MatProgressSpinnerModule,
-    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

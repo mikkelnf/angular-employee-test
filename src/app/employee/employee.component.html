@@ -1,8 +1,10 @@
 <div class="content">
     <div class="d-flex table-control">
-        <div class="btn-group add-section" role="group">
-            <a class="btn btn-outline-success"><i class="bi bi-plus-lg" [routerLink]="['add']"></i></a>
-            <button type="button" class="btn btn-outline-secondary btn-add disabled">Add new employee</button>
+        <div class="add-section">
+            <button class="btn btn-outline-success" [routerLink]="['add']">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+            <div  class="add-text">Add new employee</div>
         </div>
         <div class="input-group search-section">
             <button class="btn btn-outline-secondary disabled" type="button">
@@ -75,5 +77,6 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <hr>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10"></mat-paginator>
 </div>

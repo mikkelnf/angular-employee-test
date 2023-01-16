@@ -17,7 +17,6 @@ export class AppComponent {
     router.events.pipe(filter((event: any) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.currentRoute = event.url;
-        console.log(event);
       });
   }
 }

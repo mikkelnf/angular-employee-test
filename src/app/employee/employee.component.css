@@ -22,8 +22,15 @@ table{
 }
 
 .add-section{
+    display: flex;
     width: 200px;
     height: 40px;
+}
+
+.add-text{
+    margin: auto;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .search-section{

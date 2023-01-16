@@ -28,6 +28,5 @@ export class LoginComponent{
     }else{
       this.isLogin = false
     }
-    console.log(this.loginForm)
   }
 }
