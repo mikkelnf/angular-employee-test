@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   ],
   providers: [
     MatDatepickerModule,
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

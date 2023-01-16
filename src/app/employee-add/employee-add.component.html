@@ -5,50 +5,65 @@
         <div class="card">
             <div class="card-content">
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                    <label>First Name</label>
+                    <input formControlName="firstName" type="text" class="form-control" id="firstName"
+                        placeholder="Enter first name">
                 </div>
                 <div class="form-group">
-                    <label for="firstName">Last Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter last name">
+                    <label>Last Name</label>
+                    <input formControlName="lastName" type="text" class="form-control" id="firstName"
+                        placeholder="Enter last name">
                 </div>
                 <div class="form-group">
-                    <label for="firstName">Username</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter username">
+                    <label>Username</label>
+                    <input formControlName="username" type="text" class="form-control" id="firstName"
+                        placeholder="Enter username">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <label>Email</label>
+                    <input formControlName="email" type="email" class="form-control" id="email"
+                        placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                    <label for="basicSalary">Basic Salary</label>
-                    <input type="number" class="form-control" id="basicSalary" placeholder="Enter basic salary">
+                    <label>Basic Salary</label>
+                    <input formControlName="basicSalary" type="number" class="form-control" id="basicSalary"
+                        placeholder="Enter basic salary">
                 </div>
                 <div class="form-group">
-                    <label for="basicSalary">Birth Date</label>
-                    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter">
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                    <label>Birthdate</label>
+                    <div class="date-input">
+                        <input formControlName="birthDate" class="form-control" matInput [matDatepicker]="picker"
+                            [max]="maxDate" placeholder="Select birthdate" readonly>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="basicSalary">Group</label> <select class="form-control">
+                    <label>Group</label> <select class="form-control">
                         <option>Default select</option>
                         <option>Default select</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="basicSalary">Status</label>
+                    <label>Status</label>
                     <select class="form-control">
                         <option>Default select</option>
                         <option>Default select</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="basicSalary">Description</label>
-                    <input type="textarea" class="form-control" id="basicSalary" placeholder="Enter basic salary">
+                    <label>Description</label>
+                    <input formControlName="description" type="text" class="form-control" id="basicSalary"
+                        placeholder="Enter basic salary">
                 </div>
                 <div class="btn-group">
-                    <button type="submit" class="btn btn-outline-primary btn-submit">Save</button>
+                    <button type="submit" class="btn btn-outline-primary btn-submit"
+                        [ngClass]="{'disabled':  this.addEmployeeForm.value.firstName === '' ||
+                    this.addEmployeeForm.value.lastName  === '' ||
+                    this.addEmployeeForm.value.username  === '' ||
+                    this.addEmployeeForm.value.birthDate  === '' ||
+                    this.addEmployeeForm.value.basicSalary  === '' ||
+                    this.addEmployeeForm.value.description  === '' }">Save</button>
                     <button class="btn btn-outline-secondary" [routerLink]="['/employee']">Cancel</button>
                 </div>
             </div>

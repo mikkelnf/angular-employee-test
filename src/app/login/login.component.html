@@ -10,15 +10,13 @@
                 <div class="row">
                     <div class="col">
                         <label class="form-label">Username</label>
-                        <input type="text" class="form-control form-control-sm" id="inputUsername"
-                            placeholder="your username" formControlName="username">
+                        <input type="text" class="form-control form-control-sm" id="inputUsername" placeholder="your username" formControlName="username">
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control form-control-sm" id="inputPassword"
-                            placeholder="password" formControlName="password">
+                        <input type="password" class="form-control form-control-sm" id="inputPassword" placeholder="password" formControlName="password">
                     </div>
                 </div>
                 <button class="btn btn-outline-primary mt-4 mb-1 login-btn" [ngClass]="{'disabled': loginForm.value.username === '' || loginForm.value.password === ''}" type="submit">Login</button>
