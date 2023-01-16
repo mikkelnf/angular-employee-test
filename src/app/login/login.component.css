@@ -1,0 +1,30 @@
+.login-content {
+    padding: 60px;
+    width: 425px;
+    margin: auto;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.login-btn {
+    font-size: 14px;
+}
+
+.login-card {
+    padding: 15px;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control {
+    background-color: rgb(247, 247, 247);
+}
+
+.alert-failed {
+    text-align: center;
+}
